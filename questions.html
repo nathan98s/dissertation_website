@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> Questions </title>
+    <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+    <script type="text/javascript" src="show_image.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body class=body onload="setup()">
+    <div>
+        <div>
+            <div class=topbar>
+                <h1> How many group chats can you see?</h1>
+            </div>
+
+            <div class="image">
+                <img id="image" alt="Experiment Image">
+            </div>
+
+            <div id=answer>
+                <form action="">
+                    <input type="radio" name="Answer" value="1" />
+                    <label class="radio-label">1</label>
+
+                    <input type="radio" name="Answer" value="2" />
+                    <label class="radio-label">2</label>
+
+                    <input type="radio" name="Answer" value="3" />
+                    <label class="radio-label">3</label>
+
+                    <input type="radio" name="Answer" value="4" />
+                    <label class="radio-label">4</label>
+
+                    <input type="radio" name="Answer" value="5" />
+                    <label class="radio-label">5</label>
+
+                    <input type="radio" name="Answer" value="6" />
+                    <label class="radio-label">6</label>
+                </form>
+
+                <div class=button>
+                    <form action="">
+                        <button onclick="storeAnswer()"> Submit </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

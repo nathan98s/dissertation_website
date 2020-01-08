@@ -1,0 +1,94 @@
+
+
+.topbar {
+    background-color: lightseagreen;
+    color: white;
+    font-size: 15px;
+    height: 50px;
+    width: 100%;    
+    border-radius: 25px;
+    line-height: 50px;
+    text-align: center;    
+    vertical-align: middle;
+    font-family: 'Arial';
+    
+}
+
+.body {
+    background-color: lightgrey;
+}
+
+.ethics {
+    height: fit-content;
+    padding: 1%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: fit-content;
+    border: 5px;
+    /* background-color: lightgray; */
+}
+
+.button {
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;    
+    font-size: 25px;
+}
+
+#image{
+    width: 800px;
+    height: 800px;
+    margin-top:5; 
+    align-content: center;
+}
+
+.image{
+    width: 800px;
+    height: 800px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    align-content: center;
+}
+
+#answer {
+    height: 25px;
+    width: 100%;
+    margin:0 auto;
+    padding: 0.5%;
+    align-items: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: white;
+    background-color: lightseagreen;
+  
+}
+
+.radio-label {
+    display: inline-block;
+     vertical-align: top;
+     margin-right: 3%;
+     font-size: 25px;
+ }
+
+.imgsize {
+    height: 750px;
+    width: 800px;
+}
+
+#index {
+
+    background-color: lightgreen;
+    font-size: 15px;
+    height: 50px;
+    width: auto;
+    border-radius: 25px;
+    line-height: 50px;
+    text-align: center;
+    padding: -10px -15px;
+    vertical-align: middle;
+    font-family: 'Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+
+}
