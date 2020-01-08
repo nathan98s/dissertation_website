@@ -30,7 +30,6 @@ function randomImg1() {
     var images = JSON.parse(window.sessionStorage.getItem("images"))
 
     if (images.length == 0) {
-        alert("You have completed the experiment")
         window.location.href = "feedback.html"
     }
 
@@ -50,6 +49,13 @@ function storeAnswer() {
     var answers = JSON.parse(window.sessionStorage.getItem("answers"))
     var radio = document.getElementsByName("Answer");
     var img = document.getElementById("image");
+
+    var checkRadio = document.querySelector(
+        'input[name="Answer"]:checked');
+
+    if (checkRadio = null) {
+        alert("You must select an answer")
+    }
 
     for (var i = 0; i < radio.length; i++) {
 
