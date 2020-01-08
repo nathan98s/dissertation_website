@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ethics</title>
+    <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+</head>
+
+<body class="body">
+    <div class=topbar>
+        <h1> Ethics Approval </h1>
+    </div>
+
+    <br>
+
+    <div class=ethics>
+        <img src="images/ethics/Ethics.png" alt="Ethics Statement">
+    </div>
+
+    <br>
+
+    <div class=ethics>
+        <img src="images/ethics/Ethics_Confirmation.png" alt="Ethics Agreement">
+    </div>
+
+    <div class=button id=index>
+        <form action="questions.html">
+            <input type="submit" value="Accept">
+        </form>
+    </div>
+
+
+</body>
+
+</html>
