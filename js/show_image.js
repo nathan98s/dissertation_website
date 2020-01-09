@@ -9,13 +9,26 @@ function setup() {
     if (window.sessionStorage.getItem("images") == null) {
         var myImages1 = new Array();
 
-
-
         myImages1[0] = "images/images/attr_20.jpg";
         myImages1[1] = "images/images/attr_27.jpg";
         myImages1[2] = "images/images/attr_54.jpg";
         myImages1[3] = "images/images/attr_30.jpg";
-        myImages1[4] = "images/images/attr_35.jpg";
+        // myImages1[4] = "images/images/attr_35.jpg";
+        // myImages1[6] = "images/images/attr_45.jpg";
+        // myImages1[7] = "images/images/attr_50.jpg";
+        // myImages1[8] = "images/images/attr_65.jpg";
+        // myImages1[9] = "images/images/attr_73.jpg";
+        // myImages1[10] = "images/images/attr_80.jpg";
+        // myImages1[11] = "images/images/attr_repuls_20.jpg";
+        // myImages1[12] = "images/images/attr_repuls_27.jpg";
+        // myImages1[13] = "images/images/attr_repuls_30.jpg";
+        // myImages1[14] = "images/images/attr_repuls_35.jpg";
+        // myImages1[15] = "images/images/attr_repuls_45.jpg";
+        // myImages1[16] = "images/images/attr_repuls_50.jpg";
+        // myImages1[17] = "images/images/attr_repuls_54.jpg";
+        // myImages1[18] = "images/images/attr_repuls_65.jpg";
+        // myImages1[19] = "images/images/attr_repuls_73.jpg";
+        // myImages1[20] = "images/images/attr_repuls_80.jpg";
 
         window.sessionStorage.setItem("images", JSON.stringify(myImages1))
     }
@@ -24,13 +37,43 @@ function setup() {
 
 }
 
-function randomImg1() {
 
+function writeToDB() {
+
+    var answers = JSON.parse(window.sessionStorage.getItem("answers"));
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyDloyd9QhqpQciShEQZDXQHJDUTdz5FnPU",
+        authDomain: "dissertation-experiment.firebaseapp.com",
+        databaseURL: "https://dissertation-experiment.firebaseio.com",
+        projectId: "dissertation-experiment",
+        storageBucket: "dissertation-experiment.appspot.com",
+        messagingSenderId: "198181183945",
+        appId: "1:198181183945:web:378269b149458c41ad4818",
+        measurementId: "G-Y7ZMXFYRXR"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const db = firebase.firestore();
+    db.collection("/answers/").doc().set(answers)
+        .then(function () {
+            console.log("Document successfully written!");
+            window.location.href = "feedback.html"
+        })
+        .catch(function (error) {
+            console.error("Error writing document: ", error);
+        });
+}
+
+function randomImg1() {
 
     var images = JSON.parse(window.sessionStorage.getItem("images"))
 
     if (images.length == 0) {
-        window.location.href = "feedback.html"
+        writeToDB();
+
     }
 
     var rnd = Math.floor(Math.random() * images.length);
@@ -50,23 +93,19 @@ function storeAnswer() {
     var radio = document.getElementsByName("Answer");
     var img = document.getElementById("image");
 
-    var checkRadio = document.querySelector(
-        'input[name="Answer"]:checked');
-
-    if (checkRadio = null) {
-        alert("You must select an answer")
-    }
-
     for (var i = 0; i < radio.length; i++) {
-
         if (radio[i].checked) {
-            var name = img.src.slice(-11)
+            var name = img.src.slice(-11, -4);
             answers[name] = radio[i].value;
             console.log(answers);
             break;
         }
     }
-
     window.sessionStorage.setItem("answers", JSON.stringify(answers))
-
 }
+
+
+
+
+
+

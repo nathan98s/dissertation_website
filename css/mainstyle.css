@@ -14,8 +14,8 @@
 }
 
 .image {
-    height: 700px;
-    width: 1000px;       
+    height: fit-content;
+    width: fit-content;       
     margin: auto;
     text-align: center;
     vertical-align: middle;
