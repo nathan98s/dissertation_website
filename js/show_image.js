@@ -54,8 +54,6 @@ function setup() {
         window.sessionStorage.setItem("images", JSON.stringify(myImages1))
     }
 
-    console.log(JSON.parse(window.sessionStorage.getItem("images")).length)
-
     count = 40 - (JSON.parse(window.sessionStorage.getItem("images")).length - 1)
 
     document.getElementById("counter").innerHTML = "You are on image " + count + " of 40"
@@ -130,7 +128,9 @@ function randomImg1() {
         writeToDB();
     }
     var rnd = Math.floor(Math.random() * images.length);
+    console.log(rnd)
     var image = document.getElementById("image");
+    console.log(images[rnd])
     image.src = images[rnd];
     images.splice(rnd, 1);
     window.sessionStorage.setItem("images", JSON.stringify(images))
@@ -145,10 +145,8 @@ function storeAnswer() {
 
     for (var i = 0; i < radio.length; i++) {
         if (radio[i].checked) {
-            console.log(img.src)
-            var name = img.src.slice(-11, -4);
+            var name = img.src.slice(63, -4);
             answers[name] = radio[i].value;
-            console.log(answers);
             break;
         }
     }
