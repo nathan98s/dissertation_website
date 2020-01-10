@@ -1,6 +1,5 @@
 function setup() {
 
-
     if (window.sessionStorage.getItem("answers") == null) {
         var answers = {};
         window.sessionStorage.setItem("answers", JSON.stringify(answers))
@@ -39,6 +38,7 @@ function setup() {
 
 function storeFeedback() {
 
+
     var firebaseConfig = {
         apiKey: "AIzaSyDloyd9QhqpQciShEQZDXQHJDUTdz5FnPU",
         authDomain: "dissertation-experiment.firebaseapp.com",
@@ -52,22 +52,26 @@ function storeFeedback() {
 
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+
     var feedback = {}
 
-    feedback["feedback"] = document.getElementById("feedback").value;
+    var userText = document.getElementById("feedback").value;
 
-    console.log(feedback);
-
+    feedback["feedback"] = userText;
     const db = firebase.firestore();
     db.collection("feedback").doc().set(feedback)
         .then(function () {
-            window.close();
-            alert("Thank you for your feedback!")
+            document.getElementById("feedbackText").innerHTML = "Thank you for your feedback!";
+            document.getElementById("feedbackDiv").style.display = 'none'
+
+
+
         });
 }
 
 
 function writeToDB() {
+
     var answers = JSON.parse(window.sessionStorage.getItem("answers"));
 
     var firebaseConfig = {
@@ -96,21 +100,14 @@ function writeToDB() {
 }
 
 function randomImg1() {
-
     var images = JSON.parse(window.sessionStorage.getItem("images"))
-
     if (images.length == 0) {
         writeToDB();
-
     }
-
     var rnd = Math.floor(Math.random() * images.length);
-
     var image = document.getElementById("image");
     image.src = images[rnd];
-
     images.splice(rnd, 1);
-
     window.sessionStorage.setItem("images", JSON.stringify(images))
 }
 
