@@ -5,16 +5,28 @@
 <head>
     <title>Feedback page</title>
     <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+    <script type="text/javascript" src="js/show_image.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
 </head>
 
-<body>
+<body class=body>
 
     <div class=topbar>
-
         <h1>Feedback</h1>
+    </div>
+
+    <div style="text-align: center;">
         <hr>
         <p>I would appreciate any feedback you are willing to give about this experiment</p>
+    </div>
 
+    <div style="text-align: center;">
+        <form action="">
+            <textarea name="feedback" id="feedback" cols="90" rows="20"></textarea>
+            <br>
+        </form>
+        <button onclick="storeFeedback()"> Submit </button>
     </div>
 </body>
 

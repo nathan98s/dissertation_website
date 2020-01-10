@@ -37,9 +37,37 @@ function setup() {
 
 }
 
+function storeFeedback() {
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyDloyd9QhqpQciShEQZDXQHJDUTdz5FnPU",
+        authDomain: "dissertation-experiment.firebaseapp.com",
+        databaseURL: "https://dissertation-experiment.firebaseio.com",
+        projectId: "dissertation-experiment",
+        storageBucket: "dissertation-experiment.appspot.com",
+        messagingSenderId: "198181183945",
+        appId: "1:198181183945:web:378269b149458c41ad4818",
+        measurementId: "G-Y7ZMXFYRXR"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var feedback = {}
+
+    feedback["feedback"] = document.getElementById("feedback").value;
+
+    console.log(feedback);
+
+    const db = firebase.firestore();
+    db.collection("feedback").doc().set(feedback)
+        .then(function () {
+            window.close();
+            alert("Thank you for your feedback!")
+        });
+}
+
 
 function writeToDB() {
-
     var answers = JSON.parse(window.sessionStorage.getItem("answers"));
 
     var firebaseConfig = {

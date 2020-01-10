@@ -13,6 +13,11 @@
     background-color: lightgrey;
 }
 
+.feedback{
+    height: 300px;
+    width: 600px;
+}
+
 .image {
     height: fit-content;
     width: fit-content;       
