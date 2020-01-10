@@ -9,8 +9,15 @@
     font-family: 'Arial';    
 }
 
+.imageContainer{
+    width: 100%;
+    height: fit-content;
+}
+
 .body {
     background-color: lightgrey;
+    height: 100%;
+    width: 100%;
 }
 
 .feedback{
@@ -18,20 +25,27 @@
     width: 600px;
 }
 
-.image {
+.image, .guide {
+    display: inline-block;
     height: fit-content;
-    width: fit-content;       
+    width: 35%;
     margin: auto;
     text-align: center;
     vertical-align: middle;
-    line-height: fit-content;
-    padding:1px;
-    border:1px solid #021a40;
-    
+    line-height: fit-content;       
+}
+
+.counter{
+    display: inline-block;
+    height: fit-content;
+    width: 20%;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    line-height: fit-content; 
 }
 
 .ethics {
-
     height: fit-content;
     width: fit-content;       
     margin: auto;
@@ -42,9 +56,8 @@
     border:1px solid #021a40;  
 }
 
-
-
 .button {
+    width: 100%;
     height: 50px;
     text-align: center;
     vertical-align: middle;
@@ -53,10 +66,10 @@
 }
 
 #image{
-    width: 1000px;
-    height: 700px;
-    
-    
+    width: 800px;
+    height: 600px;
+    padding:1px;
+    border:1px solid #021a40;      
 }
 
 #answer {
@@ -86,8 +99,7 @@
     width: 800px;
 }
 
-#index {
-    
+#index {    
     font-size: 15px;
     height: 50px;
     width: auto;
@@ -96,6 +108,5 @@
     text-align: center;
     padding: -10px -15px;
     vertical-align: middle;
-    font-family: 'Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-
+    font-family: 'Arial';
 }

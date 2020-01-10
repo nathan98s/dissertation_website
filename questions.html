@@ -18,16 +18,32 @@
 
             <hr>
             <div class=topbar>
-                <h1> How many group chats can you see?</h1>
+                <h1> How many groups of people can you see?</h1>
             </div>
 
             <hr>
 
-            <div class="image">
-                <img id="image" alt="Experiment Image">
+            <div class=imageContainer>
+
+                <div class=image>
+                    <img style="border:2px solid #021a40; padding:1px" src="images/images/node.png" alt="A node">
+                    <p>A single node represents a person in a social network</p>
+                    <img style="border:2px solid #021a40; padding:1px" src="images/images/connection.png"
+                        alt="connection between nodes">
+                    <p>A connection between two people indicates a friendship between two people</p>
+                </div>
+
+                <div class=counter id=counter>
+                </div>
+
+                <div class=image>
+                    <img id="image" alt="Experiment Image">
+                </div>
+
             </div>
 
             <hr>
+
             <div id=answer>
                 <form action="">
                     <input type="radio" name="Answer" value="1" />
@@ -47,6 +63,9 @@
 
                     <input type="radio" name="Answer" value="6" />
                     <label class="radio-label">6</label>
+
+                    <input type="radio" name="Answer" value="7+" />
+                    <label class="radio-label">7+</label>
                 </form>
                 <hr>
 

@@ -54,6 +54,12 @@ function setup() {
         window.sessionStorage.setItem("images", JSON.stringify(myImages1))
     }
 
+    console.log(JSON.parse(window.sessionStorage.getItem("images")).length)
+
+    count = 40 - (JSON.parse(window.sessionStorage.getItem("images")).length - 1)
+
+    document.getElementById("counter").innerHTML = "You are on image " + count + " of 40"
+
     randomImg1();
 
 }
