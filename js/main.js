@@ -1,3 +1,5 @@
+// Creates variables in local storage for user answers and image arrays if this is the first time the page is loaded
+// then displays an image
 function setup() {
 
     if (window.sessionStorage.getItem("answers") == null) {
@@ -6,7 +8,6 @@ function setup() {
     }
 
     if (window.sessionStorage.getItem("images") == null) {
-
         var myImages1 = new Array();
 
         myImages1[0] = "images/images/attr_20.jpg";
@@ -50,58 +51,47 @@ function setup() {
         myImages1[38] = "images/images/repuls_73.jpg";
         myImages1[39] = "images/images/repuls_80.jpg";
 
-
         window.sessionStorage.setItem("images", JSON.stringify(myImages1))
     }
 
     count = 40 - (JSON.parse(window.sessionStorage.getItem("images")).length - 1)
-
     document.getElementById("counter").innerHTML = "You are on image " + count + " of 40"
-
     randomImg1();
 
 }
 
+// checks there is feedback in text box before submitting to database
 function validateFeedback() {
     var userText = document.getElementById("feedback").value;
     if (userText.length < 1) {
         alert("You must either enter feedback or close this tab!")
     } else {
-        storeFeedback();
+        // storeFeedback();
+        var firebaseConfig = {
+            apiKey: "AIzaSyDloyd9QhqpQciShEQZDXQHJDUTdz5FnPU",
+            authDomain: "dissertation-experiment.firebaseapp.com",
+            databaseURL: "https://dissertation-experiment.firebaseio.com",
+            projectId: "dissertation-experiment",
+            storageBucket: "dissertation-experiment.appspot.com",
+            messagingSenderId: "198181183945",
+            appId: "1:198181183945:web:378269b149458c41ad4818",
+            measurementId: "G-Y7ZMXFYRXR"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var feedback = {}
+
+        feedback["feedback"] = userText;
+        const db = firebase.firestore();
+        db.collection("feedback").doc().set(feedback)
+            .then(function () {
+                document.getElementById("feedbackText").innerHTML = "Thank you for your feedback! " + "<br/>" + "You may now close the window";
+                document.getElementById("feedbackDiv").style.display = 'none'
+            });
     }
-
 }
 
-function storeFeedback() {
-
-    var firebaseConfig = {
-        apiKey: "AIzaSyDloyd9QhqpQciShEQZDXQHJDUTdz5FnPU",
-        authDomain: "dissertation-experiment.firebaseapp.com",
-        databaseURL: "https://dissertation-experiment.firebaseio.com",
-        projectId: "dissertation-experiment",
-        storageBucket: "dissertation-experiment.appspot.com",
-        messagingSenderId: "198181183945",
-        appId: "1:198181183945:web:378269b149458c41ad4818",
-        measurementId: "G-Y7ZMXFYRXR"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    var feedback = {}
-    var userText = document.getElementById("feedback").value;
-
-    feedback["feedback"] = userText;
-    const db = firebase.firestore();
-    db.collection("feedback").doc().set(feedback)
-        .then(function () {
-            document.getElementById("feedbackText").innerHTML = "Thank you for your feedback! " + "<br/>" + "You may now close the window";
-            document.getElementById("feedbackDiv").style.display = 'none'
-        });
-
-
-
-}
-
-
+// writes user answers to database then loads page for feedback
 function writeToDB() {
 
     var answers = JSON.parse(window.sessionStorage.getItem("answers"));
@@ -128,6 +118,7 @@ function writeToDB() {
         });
 }
 
+// picks random image from array of image files to be displayed
 function randomImg1() {
     var images = JSON.parse(window.sessionStorage.getItem("images"))
     if (images.length == 0) {
@@ -143,6 +134,7 @@ function randomImg1() {
     window.sessionStorage.setItem("images", JSON.stringify(images))
 }
 
+// checks that an answer has been selected
 function validate() {
     var radio = document.getElementsByName("Answer");
     var checked = false;
@@ -163,6 +155,7 @@ function validate() {
     }
 }
 
+// stores answer selected from radio buttons
 function storeAnswer() {
 
     count = 40 - (JSON.parse(window.sessionStorage.getItem("images")).length - 1);
@@ -185,9 +178,3 @@ function storeAnswer() {
 
     randomImg1();
 }
-
-
-
-
-
-
