@@ -1,6 +1,6 @@
 .topbar {    
     color: black;
-    font-size: 15px;
+    font-size:1vw;
     height: 50px;
     width: 100%;     
     line-height: 50px;
@@ -20,9 +20,9 @@
     width: 100%;
 }
 
-.feedback{
-    height: 300px;
-    width: 600px;
+#feedbackText{
+    text-align: center;
+    font-size: large;
 }
 
 .image, .guide {
@@ -73,9 +73,7 @@
     border-radius: 25px;
     line-height: 25px;
     text-align: center;
-    color: black;
-    
-  
+    color: black;  
 }
 
 .radio-label {

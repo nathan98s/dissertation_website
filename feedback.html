@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/db_init.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body class=body>
@@ -16,18 +17,17 @@
     <div class=topbar>
         <h1>Feedback</h1>
     </div>
+    <hr>
 
-    <div id="feedbackText" style="text-align: center;">
-        <hr>
+    <div id="feedbackText">
         <p>I would appreciate any feedback you are willing to give about this experiment</p>
     </div>
 
     <div id="feedbackDiv" style="text-align: center;">
-        <form action="">
-            <textarea name="feedback" id="feedback" cols="90" rows="20"></textarea>
-            <br>
-        </form>
-        <button onclick="storeFeedback()"> Submit </button>
+        <textarea name="feedback" id="feedback" cols="90" rows="20"></textarea>
+        <hr>
+
+        <button onclick="validateFeedback()"> Submit </button>
     </div>
 </body>
 

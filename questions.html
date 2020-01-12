@@ -6,73 +6,47 @@
     <title> How many group chats can you see? </title>
     <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
     <script type="text/javascript" src="js/show_image.js"></script>
-    <script type="text/javascript" src="js/db_init.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body class=body onload="setup()">
     <div>
         <div>
-
             <hr>
             <div class=topbar>
                 <h1> How many groups of people can you see?</h1>
             </div>
-
             <hr>
-
             <div class=imageContainer>
-
                 <div class=image>
                     <img style="border:2px solid #021a40; padding:1px" src="images/images/node.png" alt="A node">
                     <p>A single node represents a person in a social network</p>
                     <img style="border:2px solid #021a40; padding:1px" src="images/images/connection.png"
                         alt="connection between nodes">
-                    <p>A connection between two people indicates a friendship between two people</p>
+                    <p>A connection between two nodes indicates a friendship between two people</p>
                 </div>
-
-
                 <div class=image>
                     <img id="image" alt="Experiment Image">
                 </div>
-
             </div>
 
             <hr>
 
             <div id=answer>
-                <form action="">
-                    <input type="radio" name="Answer" value="1" />
-                    <label class="radio-label">1</label>
-
-                    <input type="radio" name="Answer" value="2" />
-                    <label class="radio-label">2</label>
-
-                    <input type="radio" name="Answer" value="3" />
-                    <label class="radio-label">3</label>
-
-                    <input type="radio" name="Answer" value="4" />
-                    <label class="radio-label">4</label>
-
-                    <input type="radio" name="Answer" value="5" />
-                    <label class="radio-label">5</label>
-
-                    <input type="radio" name="Answer" value="6" />
-                    <label class="radio-label">6</label>
-
-                    <input type="radio" name="Answer" value="7+" />
-                    <label class="radio-label">7+</label>
-                </form>
+                <label><input type="radio" name="Answer" value="1" required><span>1</span></label>
+                <label><input type="radio" name="Answer" value="2" required><span>2</span></label>
+                <label><input type="radio" name="Answer" value="3" required><span>3</span></label>
+                <label><input type="radio" name="Answer" value="4" required><span>4</span></label>
+                <label><input type="radio" name="Answer" value="5" required><span>5</span></label>
+                <label><input type="radio" name="Answer" value="6" required><span>6</span></label>
+                <label><input type="radio" name="Answer" value="7+" required><span>7+</span></label>
                 <hr>
                 <div class=counter id=counter>
                 </div>
-
                 <div class=button>
-                    <form action="">
-                        <button onclick="storeAnswer()"> Submit </button>
-                    </form>
+                    <button onclick="validate()"> Submit </button>
                 </div>
             </div>
         </div>
