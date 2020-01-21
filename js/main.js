@@ -1,7 +1,6 @@
 // Creates variables in local storage for user answers and image arrays if this is the first time the page is loaded
 // then displays an image
 function setup() {
-
     if (window.sessionStorage.getItem("answers") == null) {
         var answers = {};
         window.sessionStorage.setItem("answers", JSON.stringify(answers))
@@ -9,6 +8,17 @@ function setup() {
 
     if (window.sessionStorage.getItem("images") == null) {
         var myImages1 = new Array();
+        var testImages = new Array();
+
+        testImages[0] = "images/images/practice/practice1.jpg"
+        testImages[1] = "images/images/practice/practice2.jpg"
+        testImages[2] = "images/images/practice/practice3.jpg"
+        testImages[3] = "images/images/practice/practice4.jpg"
+        testImages[4] = "images/images/practice/practice5.jpg"
+        testImages[5] = "images/images/practice/practice6.jpg"
+        testImages[6] = "images/images/practice/practice7.jpg"
+        testImages[7] = "images/images/practice/practice8.jpg"
+
 
         myImages1[0] = "images/images/attr_20.jpg";
         myImages1[1] = "images/images/attr_27.jpg";
@@ -51,11 +61,17 @@ function setup() {
         myImages1[38] = "images/images/repuls_73.jpg";
         myImages1[39] = "images/images/repuls_80.jpg";
 
+        window.sessionStorage.setItem("practiceImages", JSON.stringify(testImages))
         window.sessionStorage.setItem("images", JSON.stringify(myImages1))
     }
 
-    count = 40 - (JSON.parse(window.sessionStorage.getItem("images")).length - 1)
-    document.getElementById("counter").innerHTML = "You are on image " + count + " of 40"
+    var counter = 0;
+    window.sessionStorage.setItem("counter", counter);
+
+    total = (JSON.parse(window.sessionStorage.getItem("images").length) + JSON.parse(window.sessionStorage.getItem("practiceImages").length)) - 1;
+
+    count = total - (JSON.parse(window.sessionStorage.getItem("images")).length - 1)
+    document.getElementById("counter").innerHTML = "You are on image " + count + " of 48"
     randomImg1();
 
 }
@@ -120,19 +136,40 @@ function writeToDB() {
 
 // picks random image from array of image files to be displayed
 function randomImg1() {
-    var images = JSON.parse(window.sessionStorage.getItem("images"))
-    if (images.length == 0) {
-        writeToDB();
-    }
-    console.log(images)
-    var rnd = Math.floor(Math.random() * images.length);
-    console.log(rnd)
+    var practiceImages = JSON.parse(window.sessionStorage.getItem("practiceImages"));
+    var counter = JSON.parse(window.sessionStorage.getItem("counter"))
     var image = document.getElementById("image");
+    var images = JSON.parse(window.sessionStorage.getItem("images"));
+    image.style.transform = 'rotate(' + rand * 90 + 'deg)'
 
-    image.src = images[rnd];
-    images.splice(rnd, 1);
-    window.sessionStorage.setItem("images", JSON.stringify(images))
+    counter += 1
+    window.sessionStorage.setItem("counter", counter)
+
+    var rand = Math.floor(Math.random() * 4)
+
+    // checks if practice images are still to be completed and if not moves on to experimental images
+    if (practiceImages.length > 0) {
+        image.src = practiceImages[0];
+        practiceImages.splice(0, 1);
+        window.sessionStorage.setItem("practiceImages", JSON.stringify(practiceImages));
+
+    } else {
+        if (counter % 8 == 1) {
+            image.src = "images/images/practice_break.png"
+        } else {
+            if (images.length == 0) {
+                writeToDB();
+            }
+            var rnd = Math.floor(Math.random() * images.length);
+            counter += 1;
+            image.src = images[rnd];
+            images.splice(rnd, 1);
+            window.sessionStorage.setItem("images", JSON.stringify(images))
+        }
+    }
+
 }
+
 
 // checks that an answer has been selected
 function validate() {
@@ -140,10 +177,8 @@ function validate() {
     var checked = false;
     for (var i = 0; i < radio.length; i++) {
         if (radio[i].checked) {
-            console.log(radio[i])
             checked = true;
             break;
-            console.log("checked: " + checked);
         } else {
             checked = false;
         }
@@ -164,17 +199,28 @@ function storeAnswer() {
     var radio = document.getElementsByName("Answer");
     var img = document.getElementById("image");
 
+    if (img.src.search("practice") == -1) {
+        for (var i = 0; i < radio.length; i++) {
+            if (radio[i].checked) {
+                var name = img.src.slice(63, -4);
+                answers[name] = radio[i].value;
+                radio[i].checked = false;
+                window.sessionStorage.setItem("answers", JSON.stringify(answers));
+                break;
+            }
+        }
+
+    }
+
     for (var i = 0; i < radio.length; i++) {
         if (radio[i].checked) {
-            var name = img.src.slice(63, -4);
-            answers[name] = radio[i].value;
             radio[i].checked = false;
-            break;
         }
     }
-    console.log(answers);
 
-    window.sessionStorage.setItem("answers", JSON.stringify(answers));
+    console.log(answers)
 
     randomImg1();
+
+
 }
