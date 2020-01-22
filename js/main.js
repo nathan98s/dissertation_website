@@ -68,10 +68,12 @@ function setup() {
     var counter = 0;
     window.sessionStorage.setItem("counter", counter);
 
-    total = (JSON.parse(window.sessionStorage.getItem("images").length) + JSON.parse(window.sessionStorage.getItem("practiceImages").length)) - 1;
+    total = (JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length)
+    count = total - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length) - 1);
+    window.sessionStorage.setItem("total", total)
 
-    count = total - (JSON.parse(window.sessionStorage.getItem("images")).length - 1)
-    document.getElementById("counter").innerHTML = "You are on image " + count + " of 48"
+
+    document.getElementById("counter").innerHTML = "You are on image " + count + " of " + total
     randomImg1();
 
 }
@@ -193,8 +195,10 @@ function validate() {
 // stores answer selected from radio buttons
 function storeAnswer() {
 
-    count = 40 - (JSON.parse(window.sessionStorage.getItem("images")).length - 1);
-    document.getElementById("counter").innerHTML = "You are on image " + count + " of 40";
+    total = window.sessionStorage.getItem("total")
+
+    count = total - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length) - 1);
+    document.getElementById("counter").innerHTML = "You are on image " + count + " of " + total;
     var answers = JSON.parse(window.sessionStorage.getItem("answers"))
     var radio = document.getElementsByName("Answer");
     var img = document.getElementById("image");
