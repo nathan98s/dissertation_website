@@ -7,15 +7,8 @@ function setup() {
     }
 
     if (window.sessionStorage.getItem("images") == null) {
-        var myImages1 = new Array();
+        var myImages = new Array();
         var testImages = new Array();
-
-        let request = new Request("names.txt")
-
-        fetch(request, { mode: 'no-cors' })
-            .then(function (response) {
-                console.log(response)
-            })
 
         testImages[0] = "images/images/practice/practice1.jpg"
         testImages[1] = "images/images/practice/practice2.jpg"
@@ -27,49 +20,190 @@ function setup() {
         testImages[7] = "images/images/practice/practice8.jpg"
 
 
-        myImages1[0] = "images/images/attr_20.jpg";
-        myImages1[1] = "images/images/attr_27.jpg";
-        myImages1[2] = "images/images/attr_30.jpg";
-        myImages1[3] = "images/images/attr_35.jpg";
-        myImages1[4] = "images/images/attr_45.jpg";
-        myImages1[5] = "images/images/attr_50.jpg";
-        myImages1[6] = "images/images/attr_65.jpg";
-        myImages1[7] = "images/images/attr_73.jpg";
-        myImages1[8] = "images/images/attr_80.jpg";
-        myImages1[9] = "images/images/attr_54.jpg";
-        myImages1[10] = "images/images/attr_repuls_20.jpg";
-        myImages1[11] = "images/images/attr_repuls_27.jpg";
-        myImages1[12] = "images/images/attr_repuls_30.jpg";
-        myImages1[13] = "images/images/attr_repuls_35.jpg";
-        myImages1[14] = "images/images/attr_repuls_45.jpg";
-        myImages1[15] = "images/images/attr_repuls_50.jpg";
-        myImages1[16] = "images/images/attr_repuls_54.jpg";
-        myImages1[17] = "images/images/attr_repuls_65.jpg";
-        myImages1[18] = "images/images/attr_repuls_73.jpg";
-        myImages1[19] = "images/images/attr_repuls_80.jpg";
-        myImages1[20] = "images/images/fr_20.jpg";
-        myImages1[21] = "images/images/fr_27.jpg";
-        myImages1[22] = "images/images/fr_30.jpg";
-        myImages1[23] = "images/images/fr_35.jpg";
-        myImages1[24] = "images/images/fr_45.jpg";
-        myImages1[25] = "images/images/fr_50.jpg";
-        myImages1[26] = "images/images/fr_54.jpg";
-        myImages1[27] = "images/images/fr_65.jpg";
-        myImages1[28] = "images/images/fr_73.jpg";
-        myImages1[29] = "images/images/fr_80.jpg";
-        myImages1[30] = "images/images/repuls_20.jpg";
-        myImages1[31] = "images/images/repuls_27.jpg";
-        myImages1[32] = "images/images/repuls_30.jpg";
-        myImages1[33] = "images/images/repuls_35.jpg";
-        myImages1[34] = "images/images/repuls_45.jpg";
-        myImages1[35] = "images/images/repuls_50.jpg";
-        myImages1[36] = "images/images/repuls_54.jpg";
-        myImages1[37] = "images/images/repuls_65.jpg";
-        myImages1[38] = "images/images/repuls_73.jpg";
-        myImages1[39] = "images/images/repuls_80.jpg";
+        myImages[0] = "images/images/data-30-3-a.jpg";
+        myImages[1] = "images/images/data-30-3-b.jpg";
+        myImages[2] = "images/images/data-30-3-c.jpg";
+        myImages[3] = "images/images/data-30-3-d.jpg";
+        myImages[4] = "images/images/data-30-3-e.jpg";
+        myImages[5] = "images/images/data-30-3-f.jpg";
+        myImages[6] = "images/images/data-30-3r-a.jpg";
+        myImages[7] = "images/images/data-30-3r-b.jpg";
+        myImages[8] = "images/images/data-30-3r-c.jpg";
+        myImages[9] = "images/images/data-30-3r-d.jpg";
+        myImages[10] = "images/images/data-30-3r-e.jpg";
+        myImages[11] = "images/images/data-30-3r-f.jpg";
+        myImages[12] = "images/images/data-30-4-a.jpg";
+        myImages[13] = "images/images/data-30-4-b.jpg";
+        myImages[14] = "images/images/data-30-4-c.jpg";
+        myImages[15] = "images/images/data-30-4-d.jpg";
+        myImages[16] = "images/images/data-30-4-e.jpg";
+        myImages[17] = "images/images/data-30-4-f.jpg";
+        myImages[18] = "images/images/data-30-4r-a.jpg";
+        myImages[19] = "images/images/data-30-4r-b.jpg";
+        myImages[20] = "images/images/data-30-4r-c.jpg";
+        myImages[21] = "images/images/data-30-4r-d.jpg";
+        myImages[22] = "images/images/data-30-4r-e.jpg";
+        myImages[23] = "images/images/data-30-4r-f.jpg";
+        myImages[24] = "images/images/data-30-5-a.jpg";
+        myImages[25] = "images/images/data-30-5-b.jpg";
+        myImages[26] = "images/images/data-30-5-c.jpg";
+        myImages[27] = "images/images/data-30-5-d.jpg";
+        myImages[28] = "images/images/data-30-5-e.jpg";
+        myImages[29] = "images/images/data-30-5-f.jpg";
+        myImages[30] = "images/images/data-30-5r-a.jpg";
+        myImages[31] = "images/images/data-30-5r-b.jpg";
+        myImages[32] = "images/images/data-30-5r-c.jpg";
+        myImages[33] = "images/images/data-30-5r-d.jpg";
+        myImages[34] = "images/images/data-30-5r-e.jpg";
+        myImages[35] = "images/images/data-30-5r-f.jpg";
+        myImages[36] = "images/images/data-45-3-a.jpg";
+        myImages[37] = "images/images/data-45-3-b.jpg";
+        myImages[38] = "images/images/data-45-3-c.jpg";
+        myImages[39] = "images/images/data-45-3-d.jpg";
+        myImages[40] = "images/images/data-45-3-e.jpg";
+        myImages[41] = "images/images/data-45-3-f.jpg";
+        myImages[42] = "images/images/data-45-3r-a.jpg";
+        myImages[43] = "images/images/data-45-3r-b.jpg";
+        myImages[44] = "images/images/data-45-3r-c.jpg";
+        myImages[45] = "images/images/data-45-3r-d.jpg";
+        myImages[46] = "images/images/data-45-3r-e.jpg";
+        myImages[47] = "images/images/data-45-3r-f.jpg";
+        myImages[48] = "images/images/data-45-4-a.jpg";
+        myImages[49] = "images/images/data-45-4-b.jpg";
+        myImages[50] = "images/images/data-45-4-c.jpg";
+        myImages[51] = "images/images/data-45-4-d.jpg";
+        myImages[52] = "images/images/data-45-4-e.jpg";
+        myImages[53] = "images/images/data-45-4-f.jpg";
+        myImages[54] = "images/images/data-45-4r-a.jpg";
+        myImages[55] = "images/images/data-45-4r-b.jpg";
+        myImages[56] = "images/images/data-45-4r-c.jpg";
+        myImages[57] = "images/images/data-45-4r-d.jpg";
+        myImages[58] = "images/images/data-45-4r-e.jpg";
+        myImages[59] = "images/images/data-45-4r-f.jpg";
+        myImages[60] = "images/images/data-45-5-a.jpg";
+        myImages[61] = "images/images/data-45-5-b.jpg";
+        myImages[62] = "images/images/data-45-5-c.jpg";
+        myImages[63] = "images/images/data-45-5-d.jpg";
+        myImages[64] = "images/images/data-45-5-e.jpg";
+        myImages[65] = "images/images/data-45-5-f.jpg";
+        myImages[66] = "images/images/data-45-5r-a.jpg";
+        myImages[67] = "images/images/data-45-5r-b.jpg";
+        myImages[68] = "images/images/data-45-5r-c.jpg";
+        myImages[69] = "images/images/data-45-5r-d.jpg";
+        myImages[70] = "images/images/data-45-5r-e.jpg";
+        myImages[71] = "images/images/data-45-5r-f.jpg";
+        myImages[72] = "images/images/data-45-6-a.jpg";
+        myImages[73] = "images/images/data-45-6-b.jpg";
+        myImages[74] = "images/images/data-45-6-c.jpg";
+        myImages[75] = "images/images/data-45-6-d.jpg";
+        myImages[76] = "images/images/data-45-6-e.jpg";
+        myImages[77] = "images/images/data-45-6-f.jpg";
+        myImages[78] = "images/images/data-45-6r-a.jpg";
+        myImages[79] = "images/images/data-45-6r-b.jpg";
+        myImages[80] = "images/images/data-45-6r-c.jpg";
+        myImages[81] = "images/images/data-45-6r-d.jpg";
+        myImages[82] = "images/images/data-45-6r-e.jpg";
+        myImages[83] = "images/images/data-45-6r-f.jpg";
+        myImages[84] = "images/images/data-60-3-a.jpg";
+        myImages[85] = "images/images/data-60-3-b.jpg";
+        myImages[86] = "images/images/data-60-3-c.jpg";
+        myImages[87] = "images/images/data-60-3-d.jpg";
+        myImages[88] = "images/images/data-60-3-e.jpg";
+        myImages[89] = "images/images/data-60-3-f.jpg";
+        myImages[90] = "images/images/data-60-3r-a.jpg";
+        myImages[91] = "images/images/data-60-3r-b.jpg";
+        myImages[92] = "images/images/data-60-3r-c.jpg";
+        myImages[93] = "images/images/data-60-3r-d.jpg";
+        myImages[94] = "images/images/data-60-3r-e.jpg";
+        myImages[95] = "images/images/data-60-3r-f.jpg";
+        myImages[96] = "images/images/data-60-4-a.jpg";
+        myImages[97] = "images/images/data-60-4-b.jpg";
+        myImages[98] = "images/images/data-60-4-c.jpg";
+        myImages[99] = "images/images/data-60-4-d.jpg";
+        myImages[100] = "images/images/data-60-4-e.jpg";
+        myImages[101] = "images/images/data-60-4-f.jpg";
+        myImages[102] = "images/images/data-60-4r-a.jpg";
+        myImages[103] = "images/images/data-60-4r-b.jpg";
+        myImages[104] = "images/images/data-60-4r-c.jpg";
+        myImages[105] = "images/images/data-60-4r-d.jpg";
+        myImages[106] = "images/images/data-60-4r-e.jpg";
+        myImages[107] = "images/images/data-60-4r-f.jpg";
+        myImages[108] = "images/images/data-60-5-a.jpg";
+        myImages[109] = "images/images/data-60-5-b.jpg";
+        myImages[110] = "images/images/data-60-5-c.jpg";
+        myImages[111] = "images/images/data-60-5-d.jpg";
+        myImages[112] = "images/images/data-60-5-e.jpg";
+        myImages[113] = "images/images/data-60-5-f.jpg";
+        myImages[114] = "images/images/data-60-5r-a.jpg";
+        myImages[115] = "images/images/data-60-5r-b.jpg";
+        myImages[116] = "images/images/data-60-5r-c.jpg";
+        myImages[117] = "images/images/data-60-5r-d.jpg";
+        myImages[118] = "images/images/data-60-5r-e.jpg";
+        myImages[119] = "images/images/data-60-5r-f.jpg";
+        myImages[120] = "images/images/data-60-6-a.jpg";
+        myImages[121] = "images/images/data-60-6-b.jpg";
+        myImages[122] = "images/images/data-60-6-c.jpg";
+        myImages[123] = "images/images/data-60-6-d.jpg";
+        myImages[124] = "images/images/data-60-6-e.jpg";
+        myImages[125] = "images/images/data-60-6-f.jpg";
+        myImages[126] = "images/images/data-60-6r-a.jpg";
+        myImages[127] = "images/images/data-60-6r-b.jpg";
+        myImages[128] = "images/images/data-60-6r-c.jpg";
+        myImages[129] = "images/images/data-60-6r-d.jpg";
+        myImages[130] = "images/images/data-60-6r-e.jpg";
+        myImages[131] = "images/images/data-60-6r-f.jpg";
+        myImages[132] = "images/images/data-75-3-a.jpg";
+        myImages[133] = "images/images/data-75-3-b.jpg";
+        myImages[134] = "images/images/data-75-3-c.jpg";
+        myImages[135] = "images/images/data-75-3-d.jpg";
+        myImages[136] = "images/images/data-75-3-e.jpg";
+        myImages[137] = "images/images/data-75-3-f.jpg";
+        myImages[138] = "images/images/data-75-3r-a.jpg";
+        myImages[139] = "images/images/data-75-3r-b.jpg";
+        myImages[140] = "images/images/data-75-3r-c.jpg";
+        myImages[141] = "images/images/data-75-3r-d.jpg";
+        myImages[142] = "images/images/data-75-3r-e.jpg";
+        myImages[143] = "images/images/data-75-3r-f.jpg";
+        myImages[144] = "images/images/data-75-4-a.jpg";
+        myImages[145] = "images/images/data-75-4-b.jpg";
+        myImages[146] = "images/images/data-75-4-c.jpg";
+        myImages[147] = "images/images/data-75-4-d.jpg";
+        myImages[148] = "images/images/data-75-4-e.jpg";
+        myImages[149] = "images/images/data-75-4-f.jpg";
+        myImages[150] = "images/images/data-75-4r-a.jpg";
+        myImages[151] = "images/images/data-75-4r-b.jpg";
+        myImages[152] = "images/images/data-75-4r-c.jpg";
+        myImages[153] = "images/images/data-75-4r-d.jpg";
+        myImages[154] = "images/images/data-75-4r-e.jpg";
+        myImages[155] = "images/images/data-75-4r-f.jpg";
+        myImages[156] = "images/images/data-75-5-a.jpg";
+        myImages[157] = "images/images/data-75-5-b.jpg";
+        myImages[158] = "images/images/data-75-5-c.jpg";
+        myImages[159] = "images/images/data-75-5-d.jpg";
+        myImages[160] = "images/images/data-75-5-e.jpg";
+        myImages[161] = "images/images/data-75-5-f.jpg";
+        myImages[162] = "images/images/data-75-5r-a.jpg";
+        myImages[163] = "images/images/data-75-5r-b.jpg";
+        myImages[164] = "images/images/data-75-5r-c.jpg";
+        myImages[165] = "images/images/data-75-5r-d.jpg";
+        myImages[166] = "images/images/data-75-5r-e.jpg";
+        myImages[167] = "images/images/data-75-5r-f.jpg";
+        myImages[168] = "images/images/data-75-6-a.jpg";
+        myImages[169] = "images/images/data-75-6-b.jpg";
+        myImages[170] = "images/images/data-75-6-c.jpg";
+        myImages[171] = "images/images/data-75-6-d.jpg";
+        myImages[172] = "images/images/data-75-6-e.jpg";
+        myImages[173] = "images/images/data-75-6-f.jpg";
+        myImages[174] = "images/images/data-75-6r-a.jpg";
+        myImages[175] = "images/images/data-75-6r-b.jpg";
+        myImages[176] = "images/images/data-75-6r-c.jpg";
+        myImages[177] = "images/images/data-75-6r-d.jpg";
+        myImages[178] = "images/images/data-75-6r-e.jpg";
+        myImages[179] = "images/images/data-75-6r-f.jpg";
+
 
         window.sessionStorage.setItem("practiceImages", JSON.stringify(testImages))
-        window.sessionStorage.setItem("images", JSON.stringify(myImages1))
+        window.sessionStorage.setItem("images", JSON.stringify(myImages))
     }
 
     var counter = 0;
@@ -178,7 +312,7 @@ function randomImg1() {
         window.sessionStorage.setItem("practiceImages", JSON.stringify(practiceImages));
 
     } else {
-        if (counter % 8 == 1) {
+        if (counter % 8 == 0) {
             image.src = "images/images/practice_break.png"
         } else {
             if (images.length == 0) {
@@ -235,7 +369,6 @@ function storeAnswer() {
                 break;
             }
         }
-
     }
 
     for (var i = 0; i < radio.length; i++) {
@@ -247,6 +380,4 @@ function storeAnswer() {
     console.log(answers)
 
     randomImg1();
-
-
 }
