@@ -18,16 +18,35 @@
     </div>
     <hr>
 
-    <div id="feedbackText">
-        <p>I would appreciate any feedback you are willing to give about this experiment</p>
-    </div>
+
 
     <div id="feedbackDiv" style="text-align: center;">
-        <textarea name="feedback" id="feedback" cols="90" rows="20"></textarea>
-        <hr>
+
+        <div id="ident">
+            <p>How did you identify groups of people?</p>
+            <textarea name="feedback" id="identifyFeedback" cols="100" rows="15"></textarea>
+            <hr>
+        </div>
+
+        <div id="easier">
+            <p>Were any groups easier to identify than others? If so, why?</p>
+            <textarea name="feedback" id="easierFeedback" cols="100" rows="15"></textarea>
+            <hr>
+        </div>
+
+        <div id="changes">
+            <p>How would you want social networks to look like?</p>
+            <textarea name="feedback" id="lookFeedback" cols="100" rows="15"></textarea>
+            <hr>
+        </div>
 
         <button onclick="validateFeedback()"> Submit </button>
     </div>
+
+    <div id="feedbackText">
+        <p></p>
+    </div>
+
 </body>
 
 

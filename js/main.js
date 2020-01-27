@@ -10,6 +10,13 @@ function setup() {
         var myImages1 = new Array();
         var testImages = new Array();
 
+        let request = new Request("names.txt")
+
+        fetch(request, { mode: 'no-cors' })
+            .then(function (response) {
+                console.log(response)
+            })
+
         testImages[0] = "images/images/practice/practice1.jpg"
         testImages[1] = "images/images/practice/practice2.jpg"
         testImages[2] = "images/images/practice/practice3.jpg"
@@ -80,10 +87,23 @@ function setup() {
 
 // checks there is feedback in text box before submitting to database
 function validateFeedback() {
-    var userText = document.getElementById("feedback").value;
-    if (userText.length < 1) {
-        alert("You must either enter feedback or close this tab!")
+
+
+    var identifyFeedback = document.getElementById("identifyFeedback").value
+
+    var easierFeedback = document.getElementById("easierFeedback").value
+
+    var lookFeedback = document.getElementById("lookFeedback").value
+
+
+
+
+    if (identifyFeedback.length < 1 && easierFeedback.length < 1 && lookFeedback.length < 1) {
+        alert("You need to enter comments or close the tab!")
     } else {
+
+
+
         // storeFeedback();
         var firebaseConfig = {
             apiKey: "AIzaSyDloyd9QhqpQciShEQZDXQHJDUTdz5FnPU",
@@ -99,7 +119,9 @@ function validateFeedback() {
         firebase.initializeApp(firebaseConfig);
         var feedback = {}
 
-        feedback["feedback"] = userText;
+        feedback["identify"] = identifyFeedback;
+        feedback["easier"] = easierFeedback;
+        feedback["changes"] = lookFeedback;
         const db = firebase.firestore();
         db.collection("feedback").doc().set(feedback)
             .then(function () {
