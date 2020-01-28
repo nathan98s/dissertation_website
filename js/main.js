@@ -217,42 +217,48 @@ function validateFeedback() {
     var harderFeedback = document.getElementById("harderFeedback").value;
     var genFeedback = document.getElementById("generalFeedback").value;
 
+    var age = document.getElementById("age").value
+    var experience = document.getElementById("experience").value
+    var area = document.getElementById("area").value
 
 
-
-    if (identifyFeedback.length < 1 && easierFeedback.length < 1 && lookFeedback.length < 1 && harderFeedback.length < 1 && genFeedback.length < 1) {
-        alert("You need to enter comments or close the tab!")
+    if (age.length < 1 || experience.length < 1 || area.length < 1) {
+        alert("Please enter your demographic information")
     } else {
+        if (identifyFeedback.length < 1 && easierFeedback.length < 1 && lookFeedback.length < 1 && harderFeedback.length < 1 && genFeedback.length < 1) {
+            alert("You need to enter comments or close the tab!")
+        } else {
+            var firebaseConfig = {
+                apiKey: "AIzaSyDloyd9QhqpQciShEQZDXQHJDUTdz5FnPU",
+                authDomain: "dissertation-experiment.firebaseapp.com",
+                databaseURL: "https://dissertation-experiment.firebaseio.com",
+                projectId: "dissertation-experiment",
+                storageBucket: "dissertation-experiment.appspot.com",
+                messagingSenderId: "198181183945",
+                appId: "1:198181183945:web:378269b149458c41ad4818",
+                measurementId: "G-Y7ZMXFYRXR"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            var feedback = {}
+            feedback["Age"] = age
+            feedback["Experience"] = experience
+            feedback["Area"] = area
+            feedback["How did you identify groups?"] = identifyFeedback;
+            feedback["What made groups easier to see?"] = easierFeedback;
+            feedback["what made groups harder to see?"] = harderFeedback;
+            feedback["Any other comments"] = genFeedback
+            feedback["how would you like social networks to look?"] = lookFeedback;
+            const db = firebase.firestore();
+            db.collection("feedback").doc().set(feedback)
+                .then(function () {
+                    document.getElementById("feedbackText").innerHTML = "Thank you for your feedback! " + "<br/>" + "You may now close the window";
+                    document.getElementById("feedbackDiv").style.display = 'none'
+                });
+        }
 
-
-
-        // storeFeedback();
-        var firebaseConfig = {
-            apiKey: "AIzaSyDloyd9QhqpQciShEQZDXQHJDUTdz5FnPU",
-            authDomain: "dissertation-experiment.firebaseapp.com",
-            databaseURL: "https://dissertation-experiment.firebaseio.com",
-            projectId: "dissertation-experiment",
-            storageBucket: "dissertation-experiment.appspot.com",
-            messagingSenderId: "198181183945",
-            appId: "1:198181183945:web:378269b149458c41ad4818",
-            measurementId: "G-Y7ZMXFYRXR"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var feedback = {}
-
-        feedback["How did you identify groups?"] = identifyFeedback;
-        feedback["What made groups easier to see?"] = easierFeedback;
-        feedback["what made groups harder to see?"] = harderFeedback;
-        feedback["Any other comments"] = genFeedback
-        feedback["how would you like social networks to look?"] = lookFeedback;
-        const db = firebase.firestore();
-        db.collection("feedback").doc().set(feedback)
-            .then(function () {
-                document.getElementById("feedbackText").innerHTML = "Thank you for your feedback! " + "<br/>" + "You may now close the window";
-                document.getElementById("feedbackDiv").style.display = 'none'
-            });
     }
+
 }
 
 // writes user answers to database then loads page for feedback
