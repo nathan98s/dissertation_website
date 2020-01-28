@@ -26,6 +26,7 @@
 }
 
 .image, .guide {
+    overflow:hidden;
     display: inline-block;
     height: fit-content;
     width: 45%;
@@ -57,7 +58,7 @@
 }
 
 #image{
-    width: 600px;
+    width: 800px;
     height: 600px;
     padding:1px;
     border:2px solid #021a40;      
@@ -96,7 +97,16 @@
     border-radius: 25px;
     line-height: 50px;
     text-align: center;
-    padding: -10px -15px;
+    /* padding: -10px -15px; */
     vertical-align: middle;
     font-family: 'Arial';
+}
+
+.button{
+    margin-top: 5px;
+}
+
+.submit {
+    height: 40px;
+    width: 100px;
 }
