@@ -10,14 +10,18 @@ function setup() {
         var myImages = new Array();
         var testImages = new Array();
 
-        testImages[0] = "images/images/practice/practice1.jpg"
-        testImages[1] = "images/images/practice/practice2.jpg"
-        testImages[2] = "images/images/practice/practice3.jpg"
-        testImages[3] = "images/images/practice/practice4.jpg"
-        testImages[4] = "images/images/practice/practice5.jpg"
-        testImages[5] = "images/images/practice/practice6.jpg"
-        testImages[6] = "images/images/practice/practice7.jpg"
-        testImages[7] = "images/images/practice/practice8.jpg"
+        testImages[0] = "images/images/practice/data-40-3-a-p.jpg";
+        testImages[1] = "images/images/practice/data-40-4-b-p.jpg";
+        testImages[2] = "images/images/practice/data-40-5r-c-p.jpg";
+        testImages[3] = "images/images/practice/data-50-3-d-p.jpg";
+        testImages[4] = "images/images/practice/data-50-4r-e-p.jpg";
+        testImages[5] = "images/images/practice/data-50-6r-f-p.jpg";
+        testImages[6] = "images/images/practice/data-60-3r-a-p.jpg";
+        testImages[7] = "images/images/practice/data-60-5-b-p.jpg";
+        testImages[8] = "images/images/practice/data-60-6-c-p.jpg";
+        testImages[9] = "images/images/practice/data-70-4r-d-p.jpg";
+        testImages[10] = "images/images/practice/data-70-5r-e-p.jpg";
+        testImages[11] = "images/images/practice/data-70-6-f-p.jpg";
 
         myImages[0] = "images/images/data-30-3-a.jpg";
         myImages[1] = "images/images/data-30-3-b.jpg";
@@ -299,7 +303,7 @@ function randomImg1() {
 
     } else {
         if (counter % 8 == 0) {
-            image.src = "images/images/practice_break.png"
+            image.src = "images/images/break-p.png"
         } else {
             if (images.length == 0) {
                 writeToDB();
@@ -345,7 +349,7 @@ function storeAnswer() {
     var radio = document.getElementsByName("Answer");
     var img = document.getElementById("image");
 
-    if (img.src.search("practice") == -1) {
+    if (img.src.search("-p") == -1) {
         for (var i = 0; i < radio.length; i++) {
             if (radio[i].checked) {
                 var name = img.src.slice(63, -4);

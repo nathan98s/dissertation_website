@@ -25,11 +25,18 @@
     font-size: large;
 }
 
-.image, .guide {
-    overflow:hidden;
+.guide{
+    height:20%;
+    width:20%;    
+}
+
+
+.image {
+    /* overflow:hidden; */
     display: inline-block;
     height: fit-content;
     width: 45%;
+    margin-left: 10px;
     margin: auto;
     text-align: center;
     vertical-align: middle;
@@ -38,14 +45,26 @@
 
 .counter{
     font-weight: bold;
+    font-size:1vw;
 }
 
 .ethics {
     height: fit-content;
-    width: fit-content;       
-    margin: auto;
+    width: fit-content;  
+    /* margin: auto; */
+    align-items: center;   
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.ethics_img {
+
+    width: 100%;
+    height: 100%;
     padding:1px;
-    border:2px solid #021a40;  
+    border:3px solid #000000;   
 }
 
 .button {
@@ -58,10 +77,10 @@
 }
 
 #image{
-    width: 800px;
-    height: 600px;
+    width: 100%;
+    height: 50%;
     padding:1px;
-    border:2px solid #021a40;      
+    border:3px solid #000000;      
 }
 
 #answer {
@@ -74,7 +93,8 @@
     border-radius: 25px;
     line-height: 25px;
     text-align: center;
-    font-size: 25px;
+    font-size:1vw;
+    /* font-size: 25px; */
     color: black;  
 }
 
@@ -85,10 +105,6 @@
      font-size: 25px;
  }
 
-.imgsize {
-    height: 750px;
-    width: 800px;
-}
 
 #index {    
     font-size: 15px;
@@ -96,8 +112,7 @@
     width: auto;
     border-radius: 25px;
     line-height: 50px;
-    text-align: center;
-    /* padding: -10px -15px; */
+    text-align: center;   
     vertical-align: middle;
     font-family: 'Arial';
 }
