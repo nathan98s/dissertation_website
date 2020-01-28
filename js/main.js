@@ -326,7 +326,7 @@ function randomImg1() {
 
 
 // checks that an answer has been selected
-function validate() {
+function validate(id) {
     var radio = document.getElementsByName("Answer");
     var checked = false;
     for (var i = 0; i < radio.length; i++) {
@@ -338,14 +338,14 @@ function validate() {
         }
     }
     if (checked) {
-        storeAnswer();
+        storeAnswer(id);
     } else {
         alert("You must select an answer!")
     }
 }
 
 // stores answer selected from radio buttons
-function storeAnswer() {
+function storeAnswer(id) {
 
     total = window.sessionStorage.getItem("total")
 
@@ -354,12 +354,20 @@ function storeAnswer() {
     var answers = JSON.parse(window.sessionStorage.getItem("answers"))
     var radio = document.getElementsByName("Answer");
     var img = document.getElementById("image");
+    var confident = id;
+
+    console.log(confident)
 
     if (img.src.search("-p") == -1) {
         for (var i = 0; i < radio.length; i++) {
             if (radio[i].checked) {
-                var name = img.src.slice(63, -4);
-                answers[name] = radio[i].value;
+                var name = img.src.slice(-16);
+                if (name[0] == "/") {
+                    name = name.slice(1)
+                }
+                var dict = {}
+                dict[radio[i].value] = confident
+                answers[name] = dict;
                 radio[i].checked = false;
                 window.sessionStorage.setItem("answers", JSON.stringify(answers));
                 break;
