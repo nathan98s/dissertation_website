@@ -10,196 +10,76 @@ function setup() {
         var myImages = new Array();
         var testImages = new Array();
 
-        testImages[0] = "images/images/practice/data-40-3-a-p.jpg";
-        testImages[1] = "images/images/practice/data-40-4-b-p.jpg";
-        testImages[2] = "images/images/practice/data-40-5r-c-p.jpg";
-        testImages[3] = "images/images/practice/data-50-3-d-p.jpg";
-        testImages[4] = "images/images/practice/data-50-4r-e-p.jpg";
-        testImages[5] = "images/images/practice/data-50-6r-f-p.jpg";
-        testImages[6] = "images/images/practice/data-60-3r-a-p.jpg";
-        testImages[7] = "images/images/practice/data-60-5-b-p.jpg";
-        testImages[8] = "images/images/practice/data-60-6-c-p.jpg";
-        testImages[9] = "images/images/practice/data-70-4r-d-p.jpg";
-        testImages[10] = "images/images/practice/data-70-5r-e-p.jpg";
-        testImages[11] = "images/images/practice/data-70-6-f-p.jpg";
+        testImages[0] = ["images/images/practice/data-40-4-b-p.jpg", "images/images/practice/data-50-4r-e-p.jpg"];
+        testImages[1] = ["images/images/practice/data-50-4r-e-p.jpg", "images/images/practice/data-40-4-b-p.jpg"];
+        testImages[2] = ["images/images/practice/data-60-5-b-p.jpg", "images/images/practice/data-70-5r-e-p.jpg"];
+        testImages[3] = ["images/images/practice/data-70-5r-e-p.jpg", "images/images/practice/data-60-5-b-p.jpg"];
 
-        myImages[0] = "images/images/data-30-3-a.jpg";
-        myImages[1] = "images/images/data-30-3-b.jpg";
-        myImages[2] = "images/images/data-30-3-c.jpg";
-        myImages[3] = "images/images/data-30-3-d.jpg";
-        myImages[4] = "images/images/data-30-3-e.jpg";
-        myImages[5] = "images/images/data-30-3-f.jpg";
-        myImages[6] = "images/images/data-30-3r-b.jpg";
-        myImages[7] = "images/images/data-30-3r-c.jpg";
-        myImages[8] = "images/images/data-30-3r-d.jpg";
-        myImages[9] = "images/images/data-30-3r-e.jpg";
-        myImages[10] = "images/images/data-30-3r-f.jpg";
-        myImages[11] = "images/images/data-30-4-a.jpg";
-        myImages[12] = "images/images/data-30-4-b.jpg";
-        myImages[13] = "images/images/data-30-4-c.jpg";
-        myImages[14] = "images/images/data-30-4-d.jpg";
-        myImages[15] = "images/images/data-30-4-e.jpg";
-        myImages[16] = "images/images/data-30-4-f.jpg";
-        myImages[17] = "images/images/data-30-4r-b.jpg";
-        myImages[18] = "images/images/data-30-4r-c.jpg";
-        myImages[19] = "images/images/data-30-4r-d.jpg";
-        myImages[20] = "images/images/data-30-4r-e.jpg";
-        myImages[21] = "images/images/data-30-4r-f.jpg";
-        myImages[22] = "images/images/data-30-5-a.jpg";
-        myImages[23] = "images/images/data-30-5-b.jpg";
-        myImages[24] = "images/images/data-30-5-c.jpg";
-        myImages[25] = "images/images/data-30-5-d.jpg";
-        myImages[26] = "images/images/data-30-5-e.jpg";
-        myImages[27] = "images/images/data-30-5-f.jpg";
-        myImages[28] = "images/images/data-30-5r-b.jpg";
-        myImages[29] = "images/images/data-30-5r-c.jpg";
-        myImages[30] = "images/images/data-30-5r-d.jpg";
-        myImages[31] = "images/images/data-30-5r-e.jpg";
-        myImages[32] = "images/images/data-30-5r-f.jpg";
-        myImages[33] = "images/images/data-30-6-a.jpg";
-        myImages[34] = "images/images/data-30-6-b.jpg";
-        myImages[35] = "images/images/data-30-6-c.jpg";
-        myImages[36] = "images/images/data-30-6-d.jpg";
-        myImages[37] = "images/images/data-30-6-e.jpg";
-        myImages[38] = "images/images/data-30-6-f.jpg";
-        myImages[39] = "images/images/data-30-6r-b.jpg";
-        myImages[40] = "images/images/data-30-6r-c.jpg";
-        myImages[41] = "images/images/data-30-6r-d.jpg";
-        myImages[42] = "images/images/data-30-6r-e.jpg";
-        myImages[43] = "images/images/data-30-6r-f.jpg";
-        myImages[44] = "images/images/data-45-3-a.jpg";
-        myImages[45] = "images/images/data-45-3-b.jpg";
-        myImages[46] = "images/images/data-45-3-c.jpg";
-        myImages[47] = "images/images/data-45-3-d.jpg";
-        myImages[48] = "images/images/data-45-3-e.jpg";
-        myImages[49] = "images/images/data-45-3-f.jpg";
-        myImages[50] = "images/images/data-45-3r-b.jpg";
-        myImages[51] = "images/images/data-45-3r-c.jpg";
-        myImages[52] = "images/images/data-45-3r-d.jpg";
-        myImages[53] = "images/images/data-45-3r-e.jpg";
-        myImages[54] = "images/images/data-45-3r-f.jpg";
-        myImages[55] = "images/images/data-45-4-a.jpg";
-        myImages[56] = "images/images/data-45-4-b.jpg";
-        myImages[57] = "images/images/data-45-4-c.jpg";
-        myImages[58] = "images/images/data-45-4-d.jpg";
-        myImages[59] = "images/images/data-45-4-e.jpg";
-        myImages[60] = "images/images/data-45-4-f.jpg";
-        myImages[61] = "images/images/data-45-4r-b.jpg";
-        myImages[62] = "images/images/data-45-4r-c.jpg";
-        myImages[63] = "images/images/data-45-4r-d.jpg";
-        myImages[64] = "images/images/data-45-4r-e.jpg";
-        myImages[65] = "images/images/data-45-4r-f.jpg";
-        myImages[66] = "images/images/data-45-5-a.jpg";
-        myImages[67] = "images/images/data-45-5-b.jpg";
-        myImages[68] = "images/images/data-45-5-c.jpg";
-        myImages[69] = "images/images/data-45-5-d.jpg";
-        myImages[70] = "images/images/data-45-5-e.jpg";
-        myImages[71] = "images/images/data-45-5-f.jpg";
-        myImages[72] = "images/images/data-45-5r-b.jpg";
-        myImages[73] = "images/images/data-45-5r-c.jpg";
-        myImages[74] = "images/images/data-45-5r-d.jpg";
-        myImages[75] = "images/images/data-45-5r-e.jpg";
-        myImages[76] = "images/images/data-45-5r-f.jpg";
-        myImages[77] = "images/images/data-45-6-a.jpg";
-        myImages[78] = "images/images/data-45-6-b.jpg";
-        myImages[79] = "images/images/data-45-6-c.jpg";
-        myImages[80] = "images/images/data-45-6-d.jpg";
-        myImages[81] = "images/images/data-45-6-e.jpg";
-        myImages[82] = "images/images/data-45-6-f.jpg";
-        myImages[83] = "images/images/data-45-6r-b.jpg";
-        myImages[84] = "images/images/data-45-6r-c.jpg";
-        myImages[85] = "images/images/data-45-6r-d.jpg";
-        myImages[86] = "images/images/data-45-6r-e.jpg";
-        myImages[87] = "images/images/data-45-6r-f.jpg";
-        myImages[88] = "images/images/data-60-3-a.jpg";
-        myImages[89] = "images/images/data-60-3-b.jpg";
-        myImages[90] = "images/images/data-60-3-c.jpg";
-        myImages[91] = "images/images/data-60-3-d.jpg";
-        myImages[92] = "images/images/data-60-3-e.jpg";
-        myImages[93] = "images/images/data-60-3-f.jpg";
-        myImages[94] = "images/images/data-60-3r-b.jpg";
-        myImages[95] = "images/images/data-60-3r-c.jpg";
-        myImages[96] = "images/images/data-60-3r-d.jpg";
-        myImages[97] = "images/images/data-60-3r-e.jpg";
-        myImages[98] = "images/images/data-60-3r-f.jpg";
-        myImages[99] = "images/images/data-60-4-a.jpg";
-        myImages[100] = "images/images/data-60-4-b.jpg";
-        myImages[101] = "images/images/data-60-4-c.jpg";
-        myImages[102] = "images/images/data-60-4-d.jpg";
-        myImages[103] = "images/images/data-60-4-e.jpg";
-        myImages[104] = "images/images/data-60-4-f.jpg";
-        myImages[105] = "images/images/data-60-4r-b.jpg";
-        myImages[106] = "images/images/data-60-4r-c.jpg";
-        myImages[107] = "images/images/data-60-4r-d.jpg";
-        myImages[108] = "images/images/data-60-4r-e.jpg";
-        myImages[109] = "images/images/data-60-4r-f.jpg";
-        myImages[110] = "images/images/data-60-5-a.jpg";
-        myImages[111] = "images/images/data-60-5-b.jpg";
-        myImages[112] = "images/images/data-60-5-c.jpg";
-        myImages[113] = "images/images/data-60-5-d.jpg";
-        myImages[114] = "images/images/data-60-5-e.jpg";
-        myImages[115] = "images/images/data-60-5-f.jpg";
-        myImages[116] = "images/images/data-60-5r-b.jpg";
-        myImages[117] = "images/images/data-60-5r-c.jpg";
-        myImages[118] = "images/images/data-60-5r-d.jpg";
-        myImages[119] = "images/images/data-60-5r-e.jpg";
-        myImages[120] = "images/images/data-60-5r-f.jpg";
-        myImages[121] = "images/images/data-60-6-a.jpg";
-        myImages[122] = "images/images/data-60-6-b.jpg";
-        myImages[123] = "images/images/data-60-6-c.jpg";
-        myImages[124] = "images/images/data-60-6-d.jpg";
-        myImages[125] = "images/images/data-60-6-e.jpg";
-        myImages[126] = "images/images/data-60-6-f.jpg";
-        myImages[127] = "images/images/data-60-6r-b.jpg";
-        myImages[128] = "images/images/data-60-6r-c.jpg";
-        myImages[129] = "images/images/data-60-6r-d.jpg";
-        myImages[130] = "images/images/data-60-6r-e.jpg";
-        myImages[131] = "images/images/data-60-6r-f.jpg";
-        myImages[132] = "images/images/data-75-3-a.jpg";
-        myImages[133] = "images/images/data-75-3-b.jpg";
-        myImages[134] = "images/images/data-75-3-c.jpg";
-        myImages[135] = "images/images/data-75-3-d.jpg";
-        myImages[136] = "images/images/data-75-3-e.jpg";
-        myImages[137] = "images/images/data-75-3-f.jpg";
-        myImages[138] = "images/images/data-75-3r-b.jpg";
-        myImages[139] = "images/images/data-75-3r-c.jpg";
-        myImages[140] = "images/images/data-75-3r-d.jpg";
-        myImages[141] = "images/images/data-75-3r-e.jpg";
-        myImages[142] = "images/images/data-75-3r-f.jpg";
-        myImages[143] = "images/images/data-75-4-a.jpg";
-        myImages[144] = "images/images/data-75-4-b.jpg";
-        myImages[145] = "images/images/data-75-4-c.jpg";
-        myImages[146] = "images/images/data-75-4-d.jpg";
-        myImages[147] = "images/images/data-75-4-e.jpg";
-        myImages[148] = "images/images/data-75-4-f.jpg";
-        myImages[149] = "images/images/data-75-4r-b.jpg";
-        myImages[150] = "images/images/data-75-4r-c.jpg";
-        myImages[151] = "images/images/data-75-4r-d.jpg";
-        myImages[152] = "images/images/data-75-4r-e.jpg";
-        myImages[153] = "images/images/data-75-4r-f.jpg";
-        myImages[154] = "images/images/data-75-5-a.jpg";
-        myImages[155] = "images/images/data-75-5-b.jpg";
-        myImages[156] = "images/images/data-75-5-c.jpg";
-        myImages[157] = "images/images/data-75-5-d.jpg";
-        myImages[158] = "images/images/data-75-5-e.jpg";
-        myImages[159] = "images/images/data-75-5-f.jpg";
-        myImages[160] = "images/images/data-75-5r-b.jpg";
-        myImages[161] = "images/images/data-75-5r-c.jpg";
-        myImages[162] = "images/images/data-75-5r-d.jpg";
-        myImages[163] = "images/images/data-75-5r-e.jpg";
-        myImages[164] = "images/images/data-75-5r-f.jpg";
-        myImages[165] = "images/images/data-75-6-a.jpg";
-        myImages[166] = "images/images/data-75-6-b.jpg";
-        myImages[167] = "images/images/data-75-6-c.jpg";
-        myImages[168] = "images/images/data-75-6-d.jpg";
-        myImages[169] = "images/images/data-75-6-e.jpg";
-        myImages[170] = "images/images/data-75-6-f.jpg";
-        myImages[171] = "images/images/data-75-6r-b.jpg";
-        myImages[172] = "images/images/data-75-6r-c.jpg";
-        myImages[173] = "images/images/data-75-6r-d.jpg";
-        myImages[174] = "images/images/data-75-6r-e.jpg";
-        myImages[175] = "images/images/data-75-6r-f.jpg";
 
+        myImages[0] = ["images/images/A&R-30-3-at.jpg", "images/images/COL-30-3-at.jpg"]
+        myImages[1] = ["images/images/COL-30-3-at.jpg", "images/images/A&R-30-3-at.jpg"]
+        myImages[2] = ["images/images/A&R-30-3-st.jpg", "images/images/COL-30-3-st.jpg"]
+        myImages[3] = ["images/images/COL-30-3-st.jpg", "images/images/A&R-30-3-st.jpg"]
+        myImages[4] = ["images/images/A&R-30-4-at.jpg", "images/images/COL-30-4-at.jpg"]
+        myImages[5] = ["images/images/COL-30-4-at.jpg", "images/images/A&R-30-4-at.jpg"]
+        myImages[6] = ["images/images/A&R-30-4-st.jpg", "images/images/COL-30-4-st.jpg"]
+        myImages[7] = ["images/images/COL-30-4-st.jpg", "images/images/A&R-30-4-st.jpg"]
+        myImages[8] = ["images/images/A&R-30-5-at.jpg", "images/images/COL-30-5-at.jpg"]
+        myImages[9] = ["images/images/COL-30-5-at.jpg", "images/images/A&R-30-5-at.jpg"]
+        myImages[10] = ["images/images/A&R-30-5-st.jpg", "images/images/COL-30-5-st.jpg"]
+        myImages[11] = ["images/images/COL-30-5-st.jpg", "images/images/A&R-30-5-st.jpg"]
+        myImages[12] = ["images/images/A&R-30-6-at.jpg", "images/images/COL-30-6-at.jpg"]
+        myImages[13] = ["images/images/COL-30-6-at.jpg", "images/images/A&R-30-6-at.jpg"]
+        myImages[14] = ["images/images/A&R-30-6-st.jpg", "images/images/COL-30-6-st.jpg"]
+        myImages[15] = ["images/images/COL-30-6-st.jpg", "images/images/A&R-30-6-st.jpg"]
+        myImages[16] = ["images/images/A&R-45-3-at.jpg", "images/images/COL-45-3-at.jpg"]
+        myImages[17] = ["images/images/COL-45-3-at.jpg", "images/images/A&R-45-3-at.jpg"]
+        myImages[18] = ["images/images/A&R-45-3-st.jpg", "images/images/COL-45-3-st.jpg"]
+        myImages[19] = ["images/images/COL-45-3-st.jpg", "images/images/A&R-45-3-st.jpg"]
+        myImages[20] = ["images/images/A&R-45-4-at.jpg", "images/images/COL-45-4-at.jpg"]
+        myImages[21] = ["images/images/COL-45-4-at.jpg", "images/images/A&R-45-4-at.jpg"]
+        myImages[22] = ["images/images/A&R-45-4-st.jpg", "images/images/COL-45-4-st.jpg"]
+        myImages[23] = ["images/images/COL-45-4-st.jpg", "images/images/A&R-45-4-st.jpg"]
+        myImages[24] = ["images/images/A&R-45-5-at.jpg", "images/images/COL-45-5-at.jpg"]
+        myImages[25] = ["images/images/COL-45-5-at.jpg", "images/images/A&R-45-5-at.jpg"]
+        myImages[26] = ["images/images/A&R-45-5-st.jpg", "images/images/COL-45-5-st.jpg"]
+        myImages[27] = ["images/images/COL-45-5-st.jpg", "images/images/A&R-45-5-st.jpg"]
+        myImages[28] = ["images/images/A&R-45-6-at.jpg", "images/images/COL-45-6-at.jpg"]
+        myImages[29] = ["images/images/COL-45-6-at.jpg", "images/images/A&R-45-6-at.jpg"]
+        myImages[30] = ["images/images/A&R-45-6-st.jpg", "images/images/COL-45-6-st.jpg"]
+        myImages[31] = ["images/images/COL-45-6-st.jpg", "images/images/A&R-45-6-st.jpg"]
+        myImages[32] = ["images/images/A&R-60-3-at.jpg", "images/images/COL-60-3-at.jpg"]
+        myImages[33] = ["images/images/COL-60-3-at.jpg", "images/images/A&R-60-3-at.jpg"]
+        myImages[34] = ["images/images/A&R-60-3-st.jpg", "images/images/COL-60-3-st.jpg"]
+        myImages[35] = ["images/images/COL-60-3-st.jpg", "images/images/A&R-60-3-st.jpg"]
+        myImages[36] = ["images/images/A&R-60-4-at.jpg", "images/images/COL-60-4-at.jpg"]
+        myImages[37] = ["images/images/COL-60-4-at.jpg", "images/images/A&R-60-4-at.jpg"]
+        myImages[38] = ["images/images/A&R-60-4-st.jpg", "images/images/COL-60-4-st.jpg"]
+        myImages[39] = ["images/images/COL-60-4-st.jpg", "images/images/A&R-60-4-st.jpg"]
+        myImages[40] = ["images/images/A&R-60-5-at.jpg", "images/images/COL-60-5-at.jpg"]
+        myImages[41] = ["images/images/COL-60-5-at.jpg", "images/images/A&R-60-5-at.jpg"]
+        myImages[42] = ["images/images/A&R-60-5-st.jpg", "images/images/COL-60-5-st.jpg"]
+        myImages[43] = ["images/images/COL-60-5-st.jpg", "images/images/A&R-60-5-st.jpg"]
+        myImages[44] = ["images/images/A&R-60-6-at.jpg", "images/images/COL-60-6-at.jpg"]
+        myImages[45] = ["images/images/COL-60-6-at.jpg", "images/images/A&R-60-6-at.jpg"]
+        myImages[46] = ["images/images/A&R-60-6-st.jpg", "images/images/COL-60-6-st.jpg"]
+        myImages[47] = ["images/images/COL-60-6-st.jpg", "images/images/A&R-60-6-st.jpg"]
+        myImages[48] = ["images/images/A&R-75-3-at.jpg", "images/images/COL-75-3-at.jpg"]
+        myImages[49] = ["images/images/COL-75-3-at.jpg", "images/images/A&R-75-3-at.jpg"]
+        myImages[50] = ["images/images/A&R-75-3-st.jpg", "images/images/COL-75-3-st.jpg"]
+        myImages[51] = ["images/images/COL-75-3-st.jpg", "images/images/A&R-75-3-st.jpg"]
+        myImages[52] = ["images/images/A&R-75-4-at.jpg", "images/images/COL-75-4-at.jpg"]
+        myImages[53] = ["images/images/COL-75-4-at.jpg", "images/images/A&R-75-4-at.jpg"]
+        myImages[54] = ["images/images/A&R-75-4-st.jpg", "images/images/COL-75-4-st.jpg"]
+        myImages[55] = ["images/images/COL-75-4-st.jpg", "images/images/A&R-75-4-st.jpg"]
+        myImages[56] = ["images/images/A&R-75-5-at.jpg", "images/images/COL-75-5-at.jpg"]
+        myImages[57] = ["images/images/COL-75-5-at.jpg", "images/images/A&R-75-5-at.jpg"]
+        myImages[58] = ["images/images/A&R-75-5-st.jpg", "images/images/COL-75-5-st.jpg"]
+        myImages[59] = ["images/images/COL-75-5-st.jpg", "images/images/A&R-75-5-st.jpg"]
+        myImages[60] = ["images/images/A&R-75-6-at.jpg", "images/images/COL-75-6-at.jpg"]
+        myImages[61] = ["images/images/COL-75-6-at.jpg", "images/images/A&R-75-6-at.jpg"]
+        myImages[62] = ["images/images/A&R-75-6-st.jpg", "images/images/COL-75-6-st.jpg"]
+        myImages[63] = ["images/images/COL-75-6-st.jpg", "images/images/A&R-75-6-st.jpg"]
 
         window.sessionStorage.setItem("practiceImages", JSON.stringify(testImages))
         window.sessionStorage.setItem("images", JSON.stringify(myImages))
@@ -223,9 +103,9 @@ function validateFeedback() {
 
 
     var identifyFeedback = document.getElementById("identifyFeedback").value
-    var easierFeedback = document.getElementById("easierFeedback").value
-    var lookFeedback = document.getElementById("changesFeedback").value
-    var harderFeedback = document.getElementById("harderFeedback").value;
+    // var easierFeedback = document.getElementById("easierFeedback").value
+    // var lookFeedback = document.getElementById("changesFeedback").value
+    // var harderFeedback = document.getElementById("harderFeedback").value;
     var genFeedback = document.getElementById("generalFeedback").value;
 
     var age = document.getElementById("age").value
@@ -256,12 +136,12 @@ function validateFeedback() {
             feedback["Experience"] = experience
             feedback["Area"] = area
             feedback["How did you identify groups?"] = identifyFeedback;
-            feedback["What made groups easier to see?"] = easierFeedback;
-            feedback["what made groups harder to see?"] = harderFeedback;
+            // feedback["What made groups easier to see?"] = easierFeedback;
+            // feedback["what made groups harder to see?"] = harderFeedback;
             feedback["Any other comments"] = genFeedback
-            feedback["how would you like social networks to look?"] = lookFeedback;
+            // feedback["how would you like social networks to look?"] = lookFeedback;
             const db = firebase.firestore();
-            db.collection("feedback").doc().set(feedback)
+            db.collection("feedback_2").doc().set(feedback)
                 .then(function () {
                     document.getElementById("feedbackText").innerHTML = "Thank you for your feedback! " + "<br/>" + "You may now close the window";
                     document.getElementById("feedbackDiv").style.display = 'none'
@@ -289,7 +169,7 @@ function writeToDB() {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
-    db.collection("/answers/").doc().set(answers)
+    db.collection("/answers_2/").doc().set(answers)
         .then(function () {
             console.log("Document successfully written!");
             window.location.href = "feedback.html"
@@ -314,20 +194,23 @@ function randomImg1() {
 
     // checks if practice images are still to be completed and if not moves on to experimental images
     if (practiceImages.length > 0) {
-        image.src = practiceImages[0];
+        image.src = practiceImages[0][0];
+        image2.src = practiceImages[0][1];
         practiceImages.splice(0, 1);
         window.sessionStorage.setItem("practiceImages", JSON.stringify(practiceImages));
 
     } else {
         if (counter % 8 == 0) {
             image.src = "images/images/break-p.png"
+            image2.src = "images/images/break-p.png"
         } else {
             if (images.length == 0) {
                 writeToDB();
             }
             var rnd = Math.floor(Math.random() * images.length);
             counter += 1;
-            image.src = images[rnd];
+            image.src = images[rnd][0];
+            image2.src = images[rnd][1];
             images.splice(rnd, 1);
             window.sessionStorage.setItem("images", JSON.stringify(images))
         }
@@ -359,39 +242,63 @@ function validate(id) {
 function storeAnswer(id) {
 
     total = window.sessionStorage.getItem("total")
-
     count = total - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length) - 1);
     document.getElementById("counter").innerHTML = "You are on image " + count + " of " + total;
-    var answers = JSON.parse(window.sessionStorage.getItem("answers"))
-    var radio = document.getElementsByName("Answer");
-    var img = document.getElementById("image");
-    var confident = id;
 
-    console.log(confident)
+    var answers = JSON.parse(window.sessionStorage.getItem("answers"))
+    var img = document.getElementById("image");
+    var img2 = document.getElementById("image2");
+
+    var img_file = img.src.slice(-16);
+    if (img_file[0] == "/") {
+        img_file.slice(1);
+    }
+
+    var img_file2 = img2.src.slice(-16);
+    if (img_file2[0] == "/") {
+        img_file.slice(1);
+    }
+
+    var selected = id;
+
+    console.log(selected);
+
+
+
+    var temp_answer = {}
 
     if (img.src.search("-p") == -1) {
-        for (var i = 0; i < radio.length; i++) {
-            if (radio[i].checked) {
-                var name = img.src.slice(-16);
-                if (name[0] == "/") {
-                    name = name.slice(1)
-                }
-                var dict = {}
-                dict[radio[i].value] = confident
-                answers[name] = dict;
-                radio[i].checked = false;
-                window.sessionStorage.setItem("answers", JSON.stringify(answers));
-                break;
-            }
+
+        if (selected == "image") {
+            answers[img_file] = [img_file, img_file2]
+        } else {
+            answers[img_file2] = [img_file, img_file2]
         }
+
+
+        window.sessionStorage.setItem("answers", JSON.stringify(answers));
+
     }
 
-    for (var i = 0; i < radio.length; i++) {
-        if (radio[i].checked) {
-            radio[i].checked = false;
-        }
-    }
 
+
+    // if (img.src.search("-p") == -1) {
+
+    //     for (var i = 0; i < radio.length; i++) {
+    //         if (radio[i].checked) {
+    //             var name = img.src.slice(-16);
+    //             if (name[0] == "/") {
+    //                 name = name.slice(1)
+    //             }
+    //             var dict = {}
+    //             dict[radio[i].value] = confident
+    //             answers[name] = dict;
+    //             radio[i].checked = false;
+    //             window.sessionStorage.setItem("answers", JSON.stringify(answers));
+    //             break;
+    //         }
+    //     }
+    // }
     console.log(answers)
 
     randomImg1();

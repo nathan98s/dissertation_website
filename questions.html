@@ -16,27 +16,32 @@
         <div>
             <hr>
             <div class=topbar>
-                <h1> How many groups of people can you see?</h1>
+                <h1> Which image best represents a social network?</h1>
             </div>
             <hr>
+
             <div class=imageContainer>
                 <div class=image>
-                    <img class=guide style="border:2px solid #021a40; padding:1px" src="images/images/node.png"
-                        alt="A circle">
-                    <p style="font-size:1vw;">A single circle represents a person in a social network</p>
-                    <img class=guide style="border:2px solid #021a40; padding:1px" src="images/images/connection.png"
-                        alt="connection between circles">
-                    <p style=font-size:1vw;>A connection between two circles indicates a friendship between two people
-                    </p>
+                    <img onclick="storeAnswer(this.id)" id="image" alt="Experimental Image">
                 </div>
+
                 <div class=image>
-                    <img id="image" alt="Experiment Image">
+                    <img onclick="storeAnswer(this.id)" type="image" id="image2" alt="Experiment Image">
                 </div>
             </div>
+        </div>
 
+        <hr>
+
+        <div id=answer>
+            <p>Click on which image you prefer</p>
             <hr>
+            <div class=counter id=counter>
+            </div>
+        </div>
 
-            <div id=answer>
+
+        <!-- <div id=answer>
                 <label><input type="radio" name="Answer" value="2" required><span>2</span></label>
                 <label><input type="radio" name="Answer" value="3" required><span>3</span></label>
                 <label><input type="radio" name="Answer" value="4" required><span>4</span></label>
@@ -44,8 +49,7 @@
                 <label><input type="radio" name="Answer" value="6" required><span>6</span></label>
                 <label><input type="radio" name="Answer" value="7" required><span>7</span></label>
                 <hr>
-                <div class=counter id=counter>
-                </div>
+                
                 <div class=button>
                     <button class=submit id=confident onclick="validate(this.id);"> I am confident </button>
                 </div>
@@ -53,7 +57,7 @@
                     <button class=submit id=not onclick="validate(this.id);"> I am not confident </button>
                 </div>
             </div>
-        </div>
+        </div> -->
 </body>
 
 </html>
