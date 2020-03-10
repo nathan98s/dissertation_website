@@ -169,7 +169,7 @@ function writeToDB() {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
-    db.collection("/answers_2/").doc().set(answers)
+    db.collection("/answers_3/").doc().set(answers)
         .then(function () {
             console.log("Document successfully written!");
             window.location.href = "feedback.html"
@@ -265,15 +265,19 @@ function storeAnswer(id) {
 
 
 
-    var temp_answer = {}
+    var question = [img_file, img_file2]
 
     if (img.src.search("-p") == -1) {
 
+
+
         if (selected == "image") {
-            answers[img_file] = [img_file, img_file2]
+            answers[question] = [img_file]
         } else {
-            answers[img_file2] = [img_file, img_file2]
+            answers[question] = [img_file2]
         }
+
+        console.log(answers)
 
 
         window.sessionStorage.setItem("answers", JSON.stringify(answers));
