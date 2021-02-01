@@ -34,7 +34,7 @@
 .image {
     display: inline-block;
     height: fit-content;
-    width: 48%;
+    width: 100%;
     /* margin: auto; */
     margin-left: 15px;
     text-align: center;
@@ -139,6 +139,7 @@
 }
 
 .submit {
-    height: 65%;
-    width: 15%;
+    height: 100%;
+    width: 2%;
+    border-radius: 10px;
 }
