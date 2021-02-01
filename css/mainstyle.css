@@ -72,7 +72,7 @@
     font-size: 25px;
 }
 
-#image, #image2{
+#image{
     width: 100%;
     height: 50%;
     max-height: 400px;
@@ -139,6 +139,11 @@
 }
 
 .submit {
+    height: 65%;
+    width: 15%;
+}
+
+.answer_button {
     height: 100%;
     width: 2%;
     border-radius: 10px;
