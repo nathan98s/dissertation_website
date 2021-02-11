@@ -181,6 +181,8 @@ function validateFeedback() {
     var age = document.getElementById("age").value
     var experience = document.getElementById("experience").value
     var area = document.getElementById("area").value
+    var prim_focus = document.getElementById("prim_focus").value
+    var second_focus = document.getElementById("second_focus").value
 
 
     if (age.length < 1 || experience.length < 1 || area.length < 1) {
@@ -206,6 +208,8 @@ function validateFeedback() {
             feedback["Experience"] = experience
             feedback["Area"] = area
             feedback["How did you identify groups?"] = identifyFeedback;
+            feedback["prim_focus"] = prim_focus
+            feedback["second_focus"] = second_focus
             // feedback["What made groups easier to see?"] = easierFeedback;
             // feedback["what made groups harder to see?"] = harderFeedback;
             feedback["Any other comments"] = genFeedback
